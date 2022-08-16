@@ -1,0 +1,31 @@
+{% include 'partials/cabecera.html' %} {% block body %}
+<div class="service">
+  <div class="title">
+    <h2>Tasks Work</h2>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for el in tasks %} {% if el.1 == 1 %}
+    <div class="col">
+      <div class="box">
+        <div class="card">
+          <i class="fa-solid fa-headphones-simple"></i>
+          <h5>{{ el.2 }}</h5>
+          <div class="pra">
+            <p class="parraf">{{ el.3 }}</p>
+            <p style="text-align: center">
+              <a class="button" href="/app/crud">Modify task</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %} {% endfor %}
+  </div>
+</div>
+{% endblock %} {% include 'partials/pie.html' %}
+
+<!-- 
+  1 work
+  2 study
+  3 hobbie
+ -->

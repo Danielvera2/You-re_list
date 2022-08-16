@@ -1,0 +1,65 @@
+{% extends 'base.html' %}{% block title %}Update Tasks{% endblock %} {% block
+content %}
+<div class="Ti mx-5">
+  <h4><a href="/app/crud">C.R.U.D</a></h4>
+</div>
+<div class="Ti">
+  <h1 class="text-center">UPDATE TASKS</h1>
+</div>
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="card" id="b">
+        <div class="card-body">
+          <form id="form-Task" action="/app/crud" method="post">
+            <div class="form-group">
+              <label for="type">Type</label>
+              <select
+                name="category"
+                class="form-select"
+                aria-label="Default select example"
+              >
+                {% for categorie in categories %}
+                <option value="{{categorie.0}}">{{categorie.1}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="title">Write a title:</label>
+              <input
+                type="text"
+                id="title"
+                name="titulo"
+                value="{{task.2}}"
+                class="form-control"
+                maxlength="50"
+                autocomplete="off"
+                placeholder="Title"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="description">Write a description:</label>
+              <textarea
+                type="text"
+                id="description"
+                name="descripcion"
+                cols="30"
+                class="form-control"
+                maxlength="100"
+                autocomplete="off"
+                placeholder="{{task.3}}"
+              ></textarea>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-success btn-block" id="but">
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

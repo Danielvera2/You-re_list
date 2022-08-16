@@ -1,0 +1,87 @@
+{% extends 'index.html' %} {% block title %}{% endblock %} {% include
+'partials/nav.html' %} {% block content %}
+<section class="about" id="wh">
+  <div class="main">
+    <img
+      src="https://c4.wallpaperflare.com/wallpaper/3/624/932/anime-anime-girls-gothic-wallpaper-preview.jpg"
+    />
+    <div class="about-text">
+      <h2>Todo list</h2>
+      <h5>What <span>is?</span></h5>
+      <p>
+        It is a list of what you have pending to do. It basically contains any
+        activity you need to do, but having the list in writing doesn't
+        necessarily mean it's useful.
+      </p>
+      <button type="button">More</button>
+    </div>
+  </div>
+</section>
+<div class="content">
+  <h4 class="text-secondary">Hello, my name is</h4>
+  <h1>Todo <span>List</span></h1>
+  <h3>
+    I'm your best option when <br />
+    organizing your tasks.
+  </h3>
+  <div class="newslatter">
+    <form>
+      <input
+        type="text"
+        id="mail"
+        placeholder="Write your opinions or doubts"
+      />
+      <input type="submit" name="submit" value="Lets Start" />
+    </form>
+  </div>
+</div>
+<div class="service" id="type">
+  <div class="title">
+    <h2>Tasks Type</h2>
+  </div>
+
+  <div class="box">
+    <div class="card">
+      <i class="fa-solid fa-user-doctor"></i>
+      <h5>Worked</h5>
+      <div class="pra">
+        <p>Work-related tasks will be saved here.</p>
+
+        <p style="text-align: center">
+          <a class="button" href="/app/work">See Tasks</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h5>Study</h5>
+      <div class="pra">
+        <p>Here you will save the tasks related to the study.</p>
+
+        <p style="text-align: center">
+          <a class="button" href="/app/study">See Tasks</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-headphones-simple"></i>
+      <h5>Leisure</h5>
+      <div class="pra">
+        <p>Tasks related to free time will be saved here.</p>
+
+        <p style="text-align: center">
+          <a class="button" href="/app/hobbie">See Tasks</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------Created Task------>
+<div class="contact-me" id="created">
+  <p>{{ session["user"] }} Here you can create your tasks.</p>
+  <a class="button-two" href="/app/crud" role="button">Create task</a>
+</div>
+{% endblock %}
